@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AcademiaHub | المنصة الأكاديمية الشاملة</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=El+Messiri:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="platform-body">
+  <div class="animated-bg"><span></span><span></span><span></span><span></span></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="side-head">
+      <button class="side-toggle" id="sideToggle" aria-label="فتح/إغلاق القائمة"><i class="fa-solid fa-bars"></i></button>
+      <div class="side-logo animated-logo"><i class="fa-solid fa-graduation-cap"></i><div><b>Academia<span>Hub</span></b><small>منصة خدمات أكاديمية</small></div></div>
+    </div>
+    <nav class="side-nav" id="sideNav"></nav>
+    <div class="side-cta"><button onclick="openRequest('home')"><i class="fa-solid fa-paper-plane"></i> اطلب خدمتك</button><a href="auth.html" id="loginArea"><i class="fa-solid fa-user"></i> دخول / حساب جديد</a></div>
+  </aside>
+  <main class="main" id="mainContent">
+    <header class="topbar glass">
+      <button class="menu-btn" id="menuBtn"><i class="fa-solid fa-bars"></i></button>
+      <div class="ticker"><div><span>ثقة</span> ✦ <span>سرية</span> ✦ <span>نشر علمي</span> ✦ <span>تحليل إحصائي</span> ✦ <span>برمجة</span> ✦ <span>ترجمة</span> ✦ <span>قوالب</span> ✦ <span>خبراء</span></div></div>
+      <div class="top-actions"><button onclick="scrollToSection('request')">طلب خدمة</button><a href="admin.html" class="admin-hidden-link" title="رابط المشرف"><i class="fa-solid fa-user-shield"></i></a></div>
+    </header>
+    <div id="toast" class="toast"></div>
+    <section class="hero-section" id="home">
+      <div class="hero-copy">
+        <span class="eyebrow"><i class="fa-solid fa-sparkles"></i> منصة أكاديمية متكاملة</span>
+        <h1>ابدأ من الصفحة الرئيسية، استكشف الخدمات، ثم اطلب ما تحتاجه عند القرار.</h1>
+        <p>نوفر خدمات الرسائل الجامعية، مذكرات ومشاريع التخرج، المقالات العلمية، النشر الدولي والمحلي، الترجمة، فحص الاقتباس، التحليل الإحصائي، البرمجة، الخبراء، القوالب، والأعمال السابقة.</p>
+        <div class="hero-buttons"><button onclick="scrollToSection('sections')">استعراض الأقسام</button><button class="ghost" onclick="scrollToSection('request')">اطلب الخدمة الآن</button></div>
+      </div>
+      <div class="hero-visual"><div class="orbit-logo"><i class="fa-solid fa-graduation-cap"></i><span></span><span></span><span></span></div><div class="hero-stats"><b>+120</b><span>خدمة تفصيلية</span><b>+60</b><span>تخصص وفرع</span><b>+45</b><span>عمل سابق نموذجي</span></div></div>
+    </section>
+    <section class="about-section glass reveal" id="about"><h2>نبذة عن المنصة</h2><p>AcademiaHub واجهة خدمات أكاديمية عربية مصممة لتقليل تشتت الطالب والباحث. تعرض الخدمات والتخصصات والخبراء والقوالب قبل التسجيل، ثم تطلب الحساب فقط عند تقديم طلب فعلي.</p><div class="about-grid"><div><i class="fa-solid fa-lock"></i><b>سرية وخصوصية</b><span>طلبات وبيانات العميل لا تعرض للعامة.</span></div><div><i class="fa-solid fa-list-check"></i><b>نماذج ذكية</b><span>أسئلة مختلفة بحسب الخدمة والقسم.</span></div><div><i class="fa-solid fa-palette"></i><b>هوية مرنة</b><span>ألوان وخلفيات وصور قابلة للإدارة من لوحة المشرف.</span></div></div></section>
+    <section class="section-block" id="sections"><div class="section-head"><span>الأقسام الرئيسية</span><h2>كل قسم يحتوي خدماته وتخصصاته ونماذج الطلب الخاصة به</h2></div><div class="category-grid" id="categoryGrid"></div></section>
+    <section class="section-block" id="details"><div id="categoryDetails"></div></section>
+    <section class="section-block" id="publicationHub"><div class="section-head"><span>النشر الدولي والمحلي</span><h2>بوابات ومجلات محلية وقوائم خدمات النشر</h2></div><div class="portal-grid" id="portalGrid"></div><div class="journal-zone" id="journalZone"></div></section>
+    <section class="section-block" id="experts"><div class="section-head"><span>الخبراء</span><h2>خبراء وهميون للتجربة ويمكن تعديلهم من لوحة المشرف</h2></div><div class="filters"><select id="expertFilter"></select><input id="expertSearch" placeholder="ابحث باسم الخبير أو التخصص"></div><div class="experts-grid" id="expertsGrid"></div></section>
+    <section class="section-block" id="works"><div class="section-head"><span>الأعمال السابقة</span><h2>نماذج أعمال وملفات أصلية قابلة للتحميل والتعديل</h2></div><div class="filters" id="workFilters"></div><div class="works-grid" id="worksGrid"></div></section>
+    <section class="section-block" id="library"><div class="section-head"><span>المكتبة والقوالب</span><h2>قوالب Word وLaTeX وPowerPoint أصلية داخل المجلد</h2></div><div class="library-grid" id="libraryGrid"></div></section>
+    <section class="section-block" id="certificates"><div class="section-head"><span>الشهادات والخبرات</span><h2>شهادات نشر ومشاركة وترجمة وخبرة قابلة للاستبدال</h2></div><div class="cert-grid" id="certGrid"></div></section>
+    <section class="request-strip reveal" id="request"><div><h2>ما الخدمة التي تحتاج مساعدة فيها؟</h2><p>اختر القسم والخدمة، ثم املأ نموذجاً ذكياً. إذا لم تكن مسجلاً سيتم توجيهك لإنشاء حساب أولاً.</p></div><button onclick="openRequest('general')">اطلب الخدمة الآن</button></section>
+  </main>
+  <div class="modal" id="modal"><div class="modal-bg" onclick="closeModal()"></div><div class="modal-box"><button class="modal-x" onclick="closeModal()">×</button><div id="modalContent"></div></div></div>
+  <script src="js/app.js"></script>
+  <script type="module" src="js/firebase-public.js"></script>
+</body>
+</html>
